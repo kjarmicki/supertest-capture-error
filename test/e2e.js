@@ -42,7 +42,8 @@ describe('Capture Error Plugin', () => {
     let capturedTest;
     request
       .use(captureError((err, test) => {
-        err.message += ` at ${test.url}`;
+        capturedErr = err;
+        capturedTest = test;
       }))
       .get('/ok')
       .expect(200);
