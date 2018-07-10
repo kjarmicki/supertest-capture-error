@@ -1,18 +1,21 @@
 {
   "name": "supertest-capture-error",
   "version": "1.0.0",
-  "description": "",
+  "description": "Supertest plugin for capturing errors",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Krystian Jarmicki",
+  "license": "MIT",
   "devDependencies": {
     "express": "4.16.3",
     "mocha": "5.2.0",
     "superagent-use": "0.1.0",
     "supertest": "3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kjarmicki/supertest-capture-error"
   }
 }
