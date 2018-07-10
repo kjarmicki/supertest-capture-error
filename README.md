@@ -27,21 +27,19 @@ const request = use(supertest('http://localhost'));
   }));
 ```
 
-Now, let's say that we're using Mocha and testing user creation endpoint. Our server expect user name and password,
-and will respond with validation error if something went wrong. Here's how we use Supertest:
+Now, let's say that we're using Mocha and testing user creation endpoint. Our server expects user name and password,
+and will respond with a validation error if something went wrong. Here's how we'd use `request`:
 
 ```javascript
 request
   .post('/users')
   .send({name: 'john'})
-  .set('Accept', 'application/json')
   .expect(201)
   .end(done);
 ```
 
-Results,
-
-without the plugin:
+#### Results
+default Supertest, without the plugin:
 ```
 Error: expected 201 "Created", got 422 "Unprocessable Entity"
 at Test._assertStatus (node_modules/supertest/lib/test.js:268:12)
@@ -56,7 +54,7 @@ at _combinedTickCallback (internal/process/next_tick.js:138:11)
 at process._tickCallback (internal/process/next_tick.js:180:9)
 ```
 
-with the plugin:
+with the plugin setup as above:
 ```
 Error: expected 201 "Created", got 422 "Unprocessable Entity" at http://localhost/users
 Response Body:
