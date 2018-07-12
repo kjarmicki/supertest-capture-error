@@ -1,10 +1,13 @@
 {
   "name": "supertest-capture-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Supertest plugin for capturing errors",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
+  },
+  "engines": {
+    "node": ">= 6.x.x"
   },
   "author": "Krystian Jarmicki",
   "license": "MIT",

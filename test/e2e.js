@@ -40,7 +40,7 @@ describe('Capture Error Plugin', () => {
   it('should do nothing when no error occurs', async () => {
     let capturedErr;
     let capturedTest;
-    request
+    await request
       .use(captureError((err, test) => {
         capturedErr = err;
         capturedTest = test;
