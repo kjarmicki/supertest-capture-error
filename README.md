@@ -18,7 +18,7 @@ const use = require('superagent-use'); // so that we can apply capturing for eac
 const captureError = require('supertest-capture-error');
 
 // apply capturing for each request
-const request = use(supertest('http://localhost'));
+const request = use(supertest('http://localhost'))
   .use(captureError((error, test) => {
     // modify error message to suit our needs:
     error.message += ` at ${test.url}\n` +
